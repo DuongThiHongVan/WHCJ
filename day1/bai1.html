@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="bai1.css">
+    <title>bai1_hongvan</title>
+</head>
+<body>
+    <div> 
+        <h1>ĐĂNG KÝ HỌC VIÊN</h1>
+        <p><span>Họ và tên</span><input type="text" name="fullname"></p>
+        <p><span>Ngày sinh</span><input type="text" name="birthday"></p>
+        <p><span>Giới tính</span>
+            <input name="gender" type="radio" value="Nam"/>Nam
+            <input name="gender" type="radio" value="Nữ"/>Nữ                 
+        </p>
+        <!-- Nếu bạn không để thuộc tính name có cùng tên thì bạn sẽ chọn được 2 cái cùng lúc, do vậy 
+        cần lưu ý name đồng bộ khi dùng radio, vì với radio có nghĩa là chúng ta muốn chỉ một
+        trong các lựa chọn được chọn mà thôi. -->
+        <p><span>Địa chỉ</span><input id="dc" type="text" name="address"></p>
+        <p><span>Lớp</span>
+            <!--  định nghĩa một danh sách drop-down -->
+            <select name="chonlop">
+                <option value="example">--Chọn lớp--</option>
+                <option value="lop1">Lớp 1</option>
+                <option value="lop2">Lớp 2</option>
+                <option value="lop3">Lớp 3</option>
+            </select>
+        </p>
+        <p><span>Email </span><input type="text" name="email"></p>
+        <p><span>Điện thoại</span><input type="text" name="phone"></p>
+        <br>
+        <p>
+        <button  id="bt1" name="login" type="button">Đăng ký</button>
+        <button id="bt2" name="retype" type="button">Nhập lại</button>
+        </p>
+    </div>
+</body>
+</html>

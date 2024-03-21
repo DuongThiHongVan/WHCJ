@@ -1,0 +1,40 @@
+div#frame{
+    width: 1000px;
+    height: 1000px;
+    background-color: aqua;
+    display: block;
+    margin: auto;
+    box-shadow: 10px 10px grey;
+}
+.circle{
+    width: 20px;
+    height: 20px;
+    background-color: #ff0080;
+    display: table-cell;
+    border-radius: 50%;
+    -moz-border-radius:50%;
+    -webkit-border-radius: 50%;  
+}
+div#body1{
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    background-color: grey;
+}
+#search_bar{
+    display: flex;
+    justify-content:center ; 
+    align-items: center;
+}
+input{
+    width: 200px;
+}
+img{
+    height: 10px;
+}
+div#body2{
+    background-image: url('/day3/IMG/background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}

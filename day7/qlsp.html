@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <div class="add_prod">
+        <h2>Add new product</h2>
+        <div class="add_prod_search">
+            <input type="text" id="inputsearch" placeholder="Nhập sản phẩm">
+            <button onclick="addProduct()"> Add</button>
+        </div>
+        <div class="display_prod">
+            <h2>Display All Product</h2>
+            <table>
+                <tr>
+                    <th>Product Name</th>
+                    <th class="count">0 Products</th>
+                </tr>
+                
+            </table>
+        </div>
+    </div>
+</body>
+<script>
+    // Thêm sản phẩm mới
+function addProduct() {
+    var productName = document.getElementById("inputsearch").value.trim();
+    if (productName !== "") {
+        var table = document.querySelector(".display_prod table");
+        var newRow = table.insertRow(-1);
+        var productNameCell = newRow.insertCell(0);
+        productNameCell.textContent = productName;
+        var editButtonCell = newRow.insertCell(1);
+        var editButton = document.createElement("button");
+        editButton.textContent = "Edit";
+        editButton.onclick = function() {
+            editProduct(newRow);
+        };
+        editButtonCell.appendChild(editButton);
+        var deleteButtonCell = newRow.insertCell(2);
+        var deleteButton = document.createElement("button");
+        deleteButton.textContent = "Delete";
+        deleteButton.onclick = function() {
+            deleteProduct(newRow);
+        };
+        deleteButtonCell.appendChild(deleteButton);
+        updateProductCount();
+        document.getElementById("inputsearch").value = "";
+    } else {
+        alert("Vui lòng nhập tên sản phẩm!");
+    }
+}
+//enter
+document.getElementById("inputsearch").addEventListener("keypress", function(event) {
+    
+    if (event.key === "Enter") {
+        
+        addProduct();
+    }
+});
+
+// Cập nhật số lượng sản phẩm
+function updateProductCount() {
+    var rowCount = document.querySelector(".display_prod table").rows.length - 1;
+    var countElement = document.querySelector(".count");
+    countElement.textContent = rowCount + (rowCount === 1 ? " Product" : " Products");
+}
+
+// Chỉnh sửa sản phẩm
+function editProduct(row) {
+    var newProductName = prompt("Nhập tên sản phẩm mới:", row.cells[0].textContent);
+    if (newProductName !== null) {
+        row.cells[0].textContent = newProductName;
+    }
+}
+
+// Xóa sản phẩm
+function deleteProduct(row) {
+    if (confirm("Bạn có chắc chắn muốn xóa sản phẩm này?")) {
+        row.remove();
+        updateProductCount();
+    }
+}
+
+    
+</script>
+</html>

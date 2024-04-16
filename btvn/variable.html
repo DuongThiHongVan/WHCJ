@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Demo</p>
+    <p id="result"></p>
+</body>
+<script>
+    // c1
+    let myNumber = 100
+    // console.log(myNumber);
+    // alert(myNumber)
+    // document.write(myNumber)
+    // document.getElementById("result").innerHTML = myNumber
+
+    // c2
+    let myString = "qsxcgh"
+    console.log(myString);
+    console.log(myString.length);
+    console.log(myString.split(""));
+
+    // c3
+    let isMale = true
+    if (isMale) {
+        console.log("Người này là nam giới");
+    } else {
+        console.log("Người này không phải nam giới");
+    }
+
+    // // condition - c3
+    // let year = +prompt("Nhập vào năm cần xác định: ")
+    // let condition1 = (year % 400 == 0)
+    // let condition2 = (year % 4 == 0)
+    // let condition3 = (year % 100 != 0)
+    // if (condition1 || (condition2 && condition3)) {
+    //     console.log(year + " là năm nhuận");
+    // } else {
+    //     console.log(year + " không là năm nhuận");
+    // }
+
+    // loop - c2
+    let number = +prompt("Nhập vào năm cần xác định: ")
+    let i = 1
+    while(number >= 1) {
+        i *= number
+        number--
+    }
+    console.log(i);
+</script>
+</html>
